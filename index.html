@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A read on where AI fits across RethinkFirst's four product lines. And where it doesn't.</title>
+<meta name="description" content="You shipped the AI Dashboard on March 24th, Session Note AI before that, and RethinkFutures already runs seventy variables against more than half a billion clinical data points. The slow part probably isn't the models.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container row">
+    <div class="logo-wrap">
+      <img src="logo.svg" alt="RethinkFirst" width="200" height="40">
+    </div>
+    <div class="meta-strip">
+      Prepared for RethinkFirst <span class="dot">&bull;</span> eMerge Americas 2026, Booth 525
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Orchestration read</span>
+    <h1>A read on where AI fits across RethinkFirst's four product lines. And where it doesn't.</h1>
+    <p class="lede">
+      You shipped the AI Dashboard on March 24th. Session Note AI shipped before that. RethinkFutures already runs seventy variables against more than half a billion clinical data points. The pace is real. The question that usually follows a quarter like that is whether RethinkEd, RethinkBH, RethinkCare, and RethinkFutures can all use the same pipeline by the next sprint, or whether each product team keeps building its own. Dinesh is in his first ninety days. The board framed the next chapter around AI. This is the moment the orchestration layer either becomes an asset or becomes technical debt.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://calendly.com/thecro-eduba/30min" target="_blank" rel="noopener">
+        Book 30 minutes with Matt Creamer
+      </a>
+      <span class="cta-meta">Bring one workflow you want to compress. We'll walk the 60/30/10 across it on the call.</span>
+    </div>
+
+    <div class="verify" role="note">
+      <span class="tag">Verify</span>
+      <p>
+        This page assumes the booth banner reads <strong>RethinkFirst</strong>. If the banner says Rethink AI, Rethink Capital, Rethink Retail, or a different Rethink, tell Matt in the first ten seconds and he will pivot.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-label">Ship pace</span>
+    <h2>Three shipped AI surfaces in one quarter.</h2>
+    <div class="prose">
+      <p>
+        The plumbing that feeds them sits across four codebases with different histories (native Rethink, Vizzle, Joshin, TotalABA, TheraWe). A cross-segment flywheel from schools to providers to payors to employers is an investor narrative that has not been rebuilt on one data model yet. That's the lever.
+      </p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="n">530M+</span>
+        <span class="l">Clinical data points behind the RethinkFutures engine.</span>
+      </div>
+      <div class="stat-card">
+        <span class="n">70+</span>
+        <span class="l">Variables in the cohort and outcome prediction models.</span>
+      </div>
+      <div class="stat-card">
+        <span class="n">4</span>
+        <span class="l">Product lines under one brand, still on separate stacks.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-label">The frame</span>
+    <h2>60/30/10: which layer each piece of the stack belongs on.</h2>
+    <div class="prose">
+      <p>
+        Most AI work breaks down into three layers once you look at it honestly. Teams who skip this distinction spend budget putting LLMs where Postgres would do the job faster and with better guarantees. The orchestration question is which parts of each product belong on which layer, and which pieces can be shared across all four product lines instead of rebuilt four times.
+      </p>
+    </div>
+
+    <div class="layer-frame">
+      <div class="layer code">
+        <span class="pct">60%</span>
+        <h3>Traditional code and databases</h3>
+        <p>Scheduling, storage, session-note routing, audit trails, compliance flags, roll-ups.</p>
+        <p class="ex">Example here: most of the AI Dashboard's alerting logic is rules plus good data plumbing.</p>
+      </div>
+      <div class="layer rules">
+        <span class="pct">30%</span>
+        <h3>Rule-based logic</h3>
+        <p>Deterministic policy, eligibility checks, threshold triggers, workflow state machines.</p>
+        <p class="ex">Example here: payor-side fraud-and-abuse screens and dosage-guidance guardrails.</p>
+      </div>
+      <div class="layer ai">
+        <span class="pct">10%</span>
+        <h3>Genuine AI</h3>
+        <p>The part that actually benefits from a model, judged against the cost of running it.</p>
+        <p class="ex">Example here: Session Note AI on top of shared plumbing, and the cohort-finding inside RethinkFutures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-label">A recent engagement that maps</span>
+    <h2>Feeld, with Andrew Santus (CTO).</h2>
+    <div class="ref-card">
+      <h3>Scoped sprint, workshop plus advisory calls.</h3>
+      <div class="sub">Trigger match: product company, CTO buyer, multi-product AI orchestration</div>
+      <p>
+        Shape of the work: Organizational Context Architecture, Strategic Operations Framework, and a clear map of where AI fits across the product surface and where it doesn't. Replace the dating-app product surface with a behavioral-health product surface and the engagement shape here is the same, scaled across RethinkEd, RethinkBH, RethinkCare, and RethinkFutures.
+      </p>
+      <ul>
+        <li>Workshop with the product and platform leads</li>
+        <li>Advisory calls through the sprint window</li>
+        <li>Organizational Context Architecture deliverable</li>
+        <li>Strategic Operations Framework deliverable</li>
+      </ul>
+    </div>
+
+    <div class="prose" style="margin-top: 28px;">
+      <p class="callout">
+        Secondary reference: VigilOre, a multi-agent compliance platform where 160+ hours of regulatory work collapsed to under five minutes. Relevant if the conversation moves toward RethinkBH's audit readiness or RethinkFutures's fraud-and-abuse work.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-label">The methodology</span>
+    <h2>Interpretable Context Methodology (ICM).</h2>
+    <div class="prose">
+      <p>
+        The audit runs on a published methodology. ICM treats context as a layered filesystem with explicit interpretability properties, which lines up with how your AI Code of Ethics page talks about transparency and human oversight. One methodology behind the marketing, not a black box.
+      </p>
+      <p>
+        Read the paper on
+        <a href="https://github.com/RinDig/Interpretable-Context-Methodology-ICM-" target="_blank" rel="noopener">GitHub (RinDig/Interpretable-Context-Methodology-ICM-)</a>.
+        Submitted to ACM TiiS, MIT license.
+      </p>
+      <p style="color: var(--muted); font-size: 14.5px;">
+        If downstream work turns out to be production ML infrastructure rather than orchestration design, Eduba partners with NLP Logix, which has been in machine learning since 2011 and runs over 150 data scientists, for work that sits below the orchestration layer.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-label">Questions we walk in with</span>
+    <h2>Five things worth ten minutes at the booth.</h2>
+    <div class="prose">
+      <ol class="q-list">
+        <li>When RethinkBH ships a new AI feature, how many people inside the other three product lines can use the same pipeline the next morning?</li>
+        <li>Dr. Cox's 530-million-point dataset is the moat. Who owns the decision on which slices of that dataset feed which product?</li>
+        <li>If Dinesh asks you in week six to pick one AI investment that pays back in nine months, is that answer already on the desk, or does it need a cross-product working group?</li>
+        <li>Where do you draw the line between an AI feature and an orchestration layer for the three buyers who don't share procurement: schools, practices, employers?</li>
+        <li>Has the tempo inside the team changed since the CEO transition, or is the "emergency" language on Glassdoor still accurate in April?</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="cred">
+  <div class="container">
+    <span class="section-label">Who you'd be working with</span>
+    <div class="cred-grid">
+      <div>
+        <h2>Jake Van Clief, founder of Eduba.</h2>
+        <p>
+          Marine Corps veteran (eight years, cryptographic systems, F-35 and F-18 avionics). MSc Future Governance, University of Edinburgh. Published in ACM TiiS (ICM), arXiv, and Saints Academic Review. The veteran background is mentioned once because it's relevant when compliance and regulated data come up. Not the marketing angle.
+        </p>
+        <p style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 14px;">
+          Matt Creamer runs revenue and partnerships. He'll be at the booth and on the call.
+        </p>
+      </div>
+      <div>
+        <ul>
+          <li>1,500+ people trained across enterprise engagements since May 2025</li>
+          <li>KPMG UK (Big Four), 40+ executives trained in a regulated-industry program</li>
+          <li>Correlation One, 6,000 to 9,000 hours saved per year at Pacific Life and Colgate-Palmolive, 95% 30-day adoption</li>
+          <li>ICM methodology submitted to ACM TiiS, open-sourced on <a href="https://github.com/RinDig/Interpretable-Context-Methodology-ICM-" target="_blank" rel="noopener">GitHub</a></li>
+          <li>Jake also built an online community to 22,000 members in five weeks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <span class="section-label">Next step</span>
+    <h2>Thirty minutes with Matt. Bring one workflow you want to compress.</h2>
+    <p class="prose" style="max-width: 680px;">
+      We'll walk the 60/30/10 across it on the call and name where an audit would cut in across the four product lines. No deck. If the answer is "you already have this covered," we'll say so.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://calendly.com/thecro-eduba/30min" target="_blank" rel="noopener">
+        Book 30 minutes with Matt Creamer
+      </a>
+    </div>
+    <a class="cal-url" href="https://calendly.com/thecro-eduba/30min" target="_blank" rel="noopener">calendly.com/thecro-eduba/30min</a>
+    <p class="fine">Calibrated to a first conversation. If the right path is a relationship-only note while Dinesh wraps his first ninety days, we'll say that on the call.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container row">
+    <span class="prepared">Prepared by Eduba &middot; <a href="https://eduba.io" target="_blank" rel="noopener">eduba.io</a></span>
+    <span>For RethinkFirst, eMerge Americas 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
